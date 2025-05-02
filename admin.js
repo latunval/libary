@@ -40,6 +40,7 @@ window.deleteUser = function(index) {
   }
 };
 
+
 function renderBooks() {
   const bookList = document.getElementById("bookList");
   bookList.innerHTML = "";
@@ -51,6 +52,7 @@ function renderBooks() {
         <p><strong>${book.title}</strong> by ${book.author[0]} — ${book.genres} 
           ${book.borrowed ? `<span class="text-danger">(Borrowed by ${book.borrowedBy})</span>` : ""}
         </p>
+        <button onclick="editUser(${index})">Edit</button>
         <button onclick="deleteBook(${index})">Delete</button>
       </div>
     `;
@@ -65,7 +67,27 @@ window.deleteBook = function(index) {
     renderBooks();
   }
 };
+window.editUser = function(index) {
+  const book = books[index]; // Get the book to edit
+  const newTitle = prompt("Edit Title:", book.title);
+  const newAuthor = prompt("Edit Author:", book.author[0]);
+  const newGenre = prompt("Edit Genre:", book.genres);
 
+  if (newTitle && newAuthor && newGenre) {
+    books[index] = {
+      ...book,
+      title: newTitle.trim(),
+      author: [newAuthor.trim()],
+      genres: newGenre.trim(),
+    };
+
+    saveAll(); // Save updated books to localStorage
+    renderBooks(); // Re-render the books in the admin interface
+    alert("Book updated successfully!");
+  } else {
+    alert("Edit canceled or invalid input.");
+  }
+};
 function validateBookInputs(title, author, genre, image) {
   const errors = [];
   if (!title.trim()) errors.push({ field: "bookTitle", message: "Title is required" });

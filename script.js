@@ -23,10 +23,10 @@ function generateGenres() {
 
 async function getBook() {
   // Only fetch if no books exist in local storage
-  // if (books.length > 0) {
-  //   console.log("Books already exist, skipping API fetch:", books);
-  //   return;
-  // }
+  if (books.length > 0) {
+    console.log("Books already exist, skipping API fetch:", books);
+    return;
+  }
 
   try {
     const response = await fetch("https://openlibrary.org/search.json?q=book");
@@ -49,6 +49,15 @@ async function getBook() {
     alert("Failed to load books. Please try again later.");
   }
 }
+
+window.addEventListener('storage', (event) => {
+  if (event.key === "books") {
+    books = JSON.parse(localStorage.getItem("books")) || [];
+    console.log("Books updated from another tab:", books);
+    getDatas();  // or whatever function refreshes your UI
+  }
+});
+
 
 function getDatas(filter = "", genre = "") {
   const home = document.querySelector(".home");
