@@ -1,0 +1,281 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Tagesschrift&display=swap"); */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Tagesschrift", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: blue;
+  background-color: #f8f9fa;
+}
+
+.container-fluid {
+  width: 100%;
+}
+.dark{
+  background-color: #000000bd;
+  color: #fff !important;
+}
+
+a {
+  color: blue;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* Nav Bar Styles */
+.navbar {
+  background-color: #ffffff88;
+  font-family: "Tagesschrift", sans-serif;
+  padding: 10px 20px;
+  z-index: 1000;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: blue !important;
+}
+
+.nav-link {
+  color: blue !important;
+  font-size: 1.2rem;
+  transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+  background-color: aqua !important;
+}
+
+.nav-link.active {
+  background-color: rgba(241, 253, 249, 0.342);
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 255, 0.55)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.btn-outline-primary {
+  color: blue;
+  border-color: blue;
+  background-color: rgba(127, 255, 212, 0.342);
+  border-radius: 10px;
+  padding: 8px 16px;
+  font-size: 1.2rem;
+}
+
+.btn-outline-primary:hover {
+  background-color: aqua;
+  border-color: blue;
+}
+#dark {
+  /* margin: 0 10px; */
+  cursor: pointer;
+}
+#light {
+  cursor: pointer;
+  display: none;
+}
+
+/* Login/Signup Styles */
+.container2 {
+  background-color: #ffffff65;
+  width: 50%;
+  padding: 17px;
+  border-radius: 10px;
+  margin: 10px auto;
+  box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.form-wrapper {
+  padding: 20px;
+  box-shadow: inset 0 0 13px 0 rgba(0, 0, 0, 0.3);
+  width: 90%;
+  margin: 10px auto;
+  border-radius: 20px;
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.form-group > span,
+#loginErrorContainer {
+  display: block;
+  color: red;
+  font-weight: 700;
+  font-style: oblique;
+  text-align: center;
+  margin: 10px 0;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgb(161, 247, 242);
+  background-color: rgba(127, 255, 212, 0.342);
+  font-family: "Tagesschrift", sans-serif;
+  color: blue;
+}
+
+label {
+  margin: 10px 0 5px;
+  display: block;
+}
+
+.container2 button,
+.logs {
+  width: 40%;
+  padding: 10px;
+  border: 0;
+  border-radius: 10px;
+  background-color: rgba(127, 255, 212, 0.342);
+  margin: 10px 0;
+  transition: background-color 0.3s;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: blue;
+}
+
+.container2 button:hover,
+.logs:hover {
+  background-color: aqua;
+}
+
+.logs {
+  display: inline-block;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.logSection,
+.logSections {
+  background-image: url(./bg.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.logSection {
+  height: 100vh;
+  align-content: center;
+}
+
+.logSections {
+  height: 80vh;
+  justify-items: center;
+  align-content: center;
+  text-align: center;
+}
+
+.home, #bookRow {
+  width: 90%;
+  margin: 80px auto 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.shelf {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: inset 0 0 6px 0 rgba(0, 0, 0, 0.3);
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.shelf > img {
+  display: block;
+  height: 240px;
+  box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.3);
+  margin: 10px 0;
+}
+
+.search-bar {
+  margin: 20px auto;
+  width: 50%;
+  display: flex;
+  /* border: 2px solid red; */
+  gap: 10px;
+}
+#genreFilter{
+  width: 30%;
+}
+
+#searchInput {
+  flex: 6;
+}
+
+#searchBtn {
+  background-color: rgba(127, 255, 212, 0.342);
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#searchBtn:hover {
+  background-color: aqua;
+}
+
+/* Admin Styles */
+h2 {
+  margin-top: 2rem;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.5rem;
+}
+
+#userList .card, #bookList .card {
+  margin-bottom: 1rem;
+}
+
+.card button {
+  margin-top: 0.5rem;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.card button:hover {
+  background-color: #c82333;
+}
+
+.text-danger {
+  color: #dc3545 !important;
+}
+
+@media screen and (max-width: 768px) {
+  .home, #bookRow {
+    display: flex;
+    flex-direction: column;
+  }
+  .container2 {
+    width: 90%;
+  }
+  .container2 button,
+  .logs {
+    width: 50%;
+  }
+  .search-bar {
+    width: 90%;
+  }
+}

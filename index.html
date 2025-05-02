@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peace Library</title>
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body id="body">
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./index.html">PEACE LIBRARY</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="books">Books</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="myBook">My Books</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item d-flex align-items-center">
+              <img id="info" src="./image.png" alt="User" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
+              <span id="userInfo"></span>
+            </li>
+            <li class="nav-item" id="light">
+              L
+            </li>
+            <li class="nav-item" id="dark">
+              D
+            </li>
+            <li class="nav-item">
+              <a class="nav-link log" href="./login.html" id="loginLink" style="display: inline-block;">LogIn</a>
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-outline-primary" id="logoutBtn" style="display: none;">Logout</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <section class="logSections">
+      <h3>Welcome to Peace Library</h3>
+      <p>A Place of Study</p>
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search books by title or genre">
+        <button id="searchBtn">Search</button>
+        <select id="genreFilter">
+          <option value="">All Genres</option>
+          <option value="Thriller">Thriller</option>
+          <option value="Action">Action</option>
+          <option value="Comedy">Comedy</option>
+          <option value="Fiction">Fiction</option>
+          <option value="Non-fiction">Non-fiction</option>
+          <option value="Horror">Horror</option>
+          <option value="Drama">Drama</option>
+          <option value="Novel">Novel</option>
+          <option value="Narrative">Narrative</option>
+          <option value="Mystery">Mystery</option>
+        </select>
+      </div>
+    </section>
+    <div class="container-fluid homes">
+      <section class="bookRow" style="display: none;"> 
+        <h2>Book Borrowed</h2>
+        <div id="bookRow"></div>
+      </section>
+      <div class="home"></div>
+    </div>
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <div class="col-md-4 d-flex align-items-center">
+        <span class="mb-3 mb-md-0 text-body-secondary">© <span id="date"> </span> Peace Library, Inc</span>
+      </div>
+      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+        <li class="ms-3"><a class="text-body-secondary" href="#" aria-label="Instagram">Instagram</a></li>
+        <li class="ms-3"><a class="text-body-secondary" href="#" aria-label="Facebook">Facebook</a></li>
+      </ul>
+    </footer>
+  </div>
+  <script src="./script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
