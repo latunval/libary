@@ -31,7 +31,7 @@ async function getBook() {
   try {
     const response = await fetch("https://openlibrary.org/search.json?q=book");
     const data = await response.json();
-    const docs = data.docs.slice(0, 20);
+    const docs = data.docs.slice(0, 40);
 
     books = docs.map(element => ({
       title: element.title || "Untitled",
