@@ -333,6 +333,16 @@ h2 {
 .contact-section button:hover {
   background-color: #0056b3;
 }
+.available, .borrow, .return-book{
+  background-color: #007bff;
+  border-radius: 10px;
+  border: 0;
+  padding: 10px;
+  color: #fff;
+}
+.borrow, .return-book {
+  background-color: red;
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {

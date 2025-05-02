@@ -6,13 +6,11 @@ if (!user || user.email !== "valentino@gmail.com" || user.password1 !== "Valenti
 
 let users = JSON.parse(localStorage.getItem("users")) || [];
 let books = JSON.parse(localStorage.getItem("books")) || [];
-let theme = JSON.parse(localStorage.getItem("theme")) || [];
 
 
 function saveAll() {
   localStorage.setItem("users", JSON.stringify(users));
   localStorage.setItem("books", JSON.stringify(books));
-  localStorage.setItem("theme", JSON.stringify(theme));
 
 }
 
@@ -49,6 +47,7 @@ function renderBooks() {
     div.className = "col-md-6";
     div.innerHTML = `
       <div class="card p-3 shadow-sm">
+         <img height="100px" width="50px" src="${book.image}" alt="${book.title}">
         <p><strong>${book.title}</strong> by ${book.author[0]} — ${book.genres} 
           ${book.borrowed ? `<span class="text-danger">(Borrowed by ${book.borrowedBy})</span>` : ""}
         </p>
@@ -180,7 +179,6 @@ light.addEventListener('click', function(){
   light.style.display =" none"
   body.classList.remove('dark');
 footer.classList.remove('dark');
-saveAll()
 });
 
 dark.addEventListener('click', function(){
@@ -189,7 +187,6 @@ dark.addEventListener('click', function(){
   light.style.display =" block"
   body.classList.add('dark');
   footer.classList.add('dark');
-  saveAll()
 })
 const dates = document.getElementById("date");
 let date = new Date();
